@@ -64,7 +64,7 @@ void HariMain(void)
 	io_out8(PIC1_IMR, 0xef); /* ƒ}ƒEƒX‚ð‹–‰Â(11101111) */
 	fifo32_init(&keycmd, 32, keycmd_buf, 0);
 
-	memtotal = memtest(0x00400000, 0xbfffffff);
+	memtotal = 32 * 1024 * 1024;
 	memman_init(memman);
 	memman_free(memman, 0x00001000, 0x0009e000); /* 0x00001000 - 0x0009efff */
 	memman_free(memman, 0x00400000, memtotal - 0x00400000);
